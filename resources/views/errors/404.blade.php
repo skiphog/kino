@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layout')
 
 @section('title','Страница не найдена')
 @section('description','Ошибка 404')
