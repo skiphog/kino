@@ -1,0 +1,65 @@
+// 1. Your custom variables and variable overwrites.
+//$global-link-color: #da4c59;
+$global-primary-background: #050505 !default;
+$global-secondary-background: #24b662 !default;
+$global-danger-background: #c9302c !default;
+$s-background: #050505;
+$s-color-background: rgba(255, 255, 255, 0.70);
+
+// 2. Import default variables and available mixins.
+@import "~uikit/src/scss/variables-theme.scss";
+@import "~uikit/src/scss/mixins-theme.scss";
+
+// 3. Your custom mixin overwrites.
+//@mixin hook-card() { color: #ffff00; }
+
+// 4. Import UIkit.
+@import "~uikit/src/scss/uikit-theme.scss";
+
+body {
+  min-height: 100%;
+  overflow-y: scroll;
+}
+
+#particles-js, .s-footer {
+  background: url("/images/stars.jpg") $s-background;
+  height: 300px;
+  color: $s-color-background;
+}
+
+.g-logo {
+  display: block;
+  position: absolute;
+  left: 50%;
+  margin: 10px 0 0 -302px;
+}
+
+.uk-navbar-nav>li>a{
+  position: relative;
+  color: $s-color-background;
+}
+
+.uk-navbar-nav>li>a:hover{
+  color: #fff;
+}
+
+.uk-navbar-nav>li>a:hover::before {
+  right: 15px;
+}
+.uk-navbar-nav>li>a::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 15px;
+  right: calc(102% - 15px);
+  bottom: 20px;
+  height: 1px;
+  background-color: currentColor;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  -webkit-transition-property: right;
+  transition-property: right;
+}
+.uk-navbar-nav{
+  margin-left: 150px;
+}
