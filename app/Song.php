@@ -4,6 +4,18 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Song
+ *
+ * @property int $id
+ * @property int $album_id
+ * @property string $name
+ * @property-read \App\Album $album
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Song whereAlbumId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Song whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Song whereName($value)
+ * @mixin \Eloquent
+ */
 class Song extends Model
 {
     /**

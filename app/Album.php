@@ -4,6 +4,20 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * App\Album
+ *
+ * @property int $id
+ * @property string $title
+ * @property string $img
+ * @property \Carbon\Carbon $created_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Song[] $songs
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Album whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Album whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Album whereImg($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Album whereTitle($value)
+ * @mixin \Eloquent
+ */
 class Album extends Model
 {
     /**
