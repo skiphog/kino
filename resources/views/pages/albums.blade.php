@@ -14,7 +14,9 @@
 @section('content')
     @if($albums->isNotEmpty())
         @foreach($albums as $album)
-            <h3> {{ $album->created_at->format('Y') }}  &mdash; {{ $album->title }} ({{ $album->songs_count }})</h3>
+            <h3>{{ $album->created_at }}г. &ndash; <q>{{ $album->title }}</q>
+                ({{ $album->songs->count()}} {{ trans_choice('ru.track', $album->songs->count()) }})
+            </h3>
             @if($album->songs->isNotEmpty())
                 <ol>
                     @foreach($album->songs as $song)

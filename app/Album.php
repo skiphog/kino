@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -31,16 +32,21 @@ class Album extends Model
     ];
 
     /**
-     * Поля, которые будут возвращаться как объект Carbon
-     * @var array
-     */
-    protected $dates = ['created_at'];
-
-    /**
      * Таблица не имеет полей timestamps created_at и updated_at
      * @var bool
      */
     public $timestamps = false;
+
+    /**
+     * Получить дату в виде года
+     * @param string $value
+     * @return string
+     * @throws \InvalidArgumentException
+     */
+    public function getCreatedAtAttribute($value)
+    {
+        return Carbon::createFromFormat('Y-m-d', $value)->format('Y');
+    }
 
     /**
      * Альбом имеет много песен
