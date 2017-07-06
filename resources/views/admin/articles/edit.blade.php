@@ -4,7 +4,8 @@
 
 @section('content')
 
-    @include('errors.list')
+    @include('partials.errors')
+    @include('partials.flash')
 
     {{ Form::model($article,['method' => 'PUT','route' => ['articles.update', $article->id]]) }}
         @include('admin.articles.form',['nameButton' => 'Сохранить'])

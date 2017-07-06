@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Article;
-use Illuminate\Http\Request;
+use App\Http\Requests\ArticleRequest;
 
 class ArticleController extends Admin
 {
@@ -31,25 +31,16 @@ class ArticleController extends Admin
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Записать новую статью
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param ArticleRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ArticleRequest $request)
     {
-        //
-    }
+        Article::create($request->all());
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        return redirect(route('articles.index'))->with('flash', 'Статья создана');
     }
 
     /**
@@ -64,25 +55,29 @@ class ArticleController extends Admin
     }
 
     /**
-     * Update the specified resource in storage.
+     * Сохранить отредактированную статью
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
+     * @param ArticleRequest $request
+     * @param Article $article
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ArticleRequest $request, Article $article)
     {
-        //
+        $article->update($request->all());
+
+        return back()->with('flash', 'Статья сохранена');
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Удалить статью
      *
-     * @param  int $id
+     * @param Article $article
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Article $article)
     {
-        //
+        dd($article);
+
+        return redirect(route('articles.index'))->with('flash', 'Статья удалена');
     }
 }

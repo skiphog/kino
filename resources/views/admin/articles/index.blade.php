@@ -10,11 +10,14 @@
 @section('description', 'Управление статьями')
 
 @section('content')
+
+    @include('partials.flash')
+
     <div class="uk-flex uk-flex-center">
         <a href="{{ route('articles.create') }}"
                 class="uk-button uk-button-secondary uk-margin-small-bottom">Добавить статью</a>
     </div>
-    
+
     @if($articles->isNotEmpty())
         <table class="uk-table uk-table-divider uk-table-middle">
             <thead>

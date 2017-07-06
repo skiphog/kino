@@ -4,7 +4,7 @@
 
 @section('content')
 
-    @include('errors.list')
+    @include('partials.errors')
 
     {{ Form::open(['route' => 'articles.store']) }}
         @include('admin.articles.form', ['nameButton' => 'Добавить'])
