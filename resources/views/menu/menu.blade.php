@@ -4,6 +4,9 @@
         <li><a href="/">Главная</a></li>
         <li><a href="{{ url('albums') }}">Альбомы</a></li>
         <li><a href="{{ url('articles') }}">Статьи</a></li>
+        @if (Auth::check())
+            <li><a href="{{ url('/admin') }}">Админка</a></li>
+        @endif
     </ul>
 </div>
 <div id="particles-js"></div>
