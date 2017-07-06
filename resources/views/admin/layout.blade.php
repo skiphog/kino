@@ -16,6 +16,7 @@
         <a class="uk-navbar-item uk-logo" href="{{ url('admin') }}">Админка</a>
         <ul class="uk-navbar-nav">
             <li><a href="/">На сайт</a></li>
+            <li><a href="{{ route('articles.index') }}">Статьи</a></li>
         </ul>
     </div>
 </nav>
