@@ -6,10 +6,10 @@
 * [Миграции для всех таблиц + возможность заполнить таблицы первоначальными данными](https://github.com/skiphog/kino/tree/master/database/migrations)
 
 Модели
-* [Альбом (Использует связь - один ко многим)](https://github.com/skiphog/kino/blob/master/app/Album.php)
-* [Песня (Связанная модель)](https://github.com/skiphog/kino/blob/master/app/Song.php)
-* [Статья](https://github.com/skiphog/kino/blob/master/app/Article.php)
-* Пользователь (из коробки)
+* [Album (Использует связь - один ко многим)](https://github.com/skiphog/kino/blob/master/app/Album.php)
+* [Song (Связанная модель)](https://github.com/skiphog/kino/blob/master/app/Song.php)
+* [Article](https://github.com/skiphog/kino/blob/master/app/Article.php)
+* User (из коробки)
 
 Контроллеры
 * [Контроллеры для работы](https://github.com/skiphog/kino/tree/master/app/Http/Controllers)
