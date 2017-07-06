@@ -73,11 +73,12 @@ class ArticleController extends Admin
      *
      * @param Article $article
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function destroy(Article $article)
     {
-        dd($article);
+        $article->delete();
 
-        return redirect(route('articles.index'))->with('flash', 'Статья удалена');
+        return back()->with('flash', 'Статья удалена');
     }
 }

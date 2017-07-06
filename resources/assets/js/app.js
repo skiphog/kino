@@ -8,10 +8,15 @@ import Icons from 'uikit/dist/js/uikit-icons'
 // loads the Icon plugin
 UIkit.use(Icons)
 
-/*
- UIkit.notification({
- message: text,
- status: 'danger',
- pos: 'bottom-center',
- timeout: 5000
- });*/
+$(document).ready(function () {
+
+  $('#admin-article').on('click', '.delete', function () {
+    const that = $(this)
+    UIkit.modal.confirm('Удалить статью?').then(function() {
+      that.next().submit()
+    }, function () {
+
+    });
+  });
+
+});

@@ -19,7 +19,7 @@
     </div>
 
     @if($articles->isNotEmpty())
-        <table class="uk-table uk-table-divider uk-table-middle">
+        <table id="admin-article" class="uk-table uk-table-divider uk-table-middle">
             <thead>
             <tr>
                 <th>Название</th>
@@ -41,15 +41,17 @@
                                 <ul class="uk-list">
                                     <li>
                                         <a class="uk-icon-link" href="{{ route('articles.edit',['id' => $article->id]) }}">
-                                            <span uk-icon="icon: file-edit"></span>
-                                            Редактировать
+                                            <span uk-icon="icon: file-edit"></span> Редактировать
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="uk-icon-link" href="#">
-                                            <span uk-icon="icon: trash"></span>
-                                            Удалить
+                                        <a class="uk-icon-link delete" href="#">
+                                            <span uk-icon="icon: trash"></span> Удалить
                                         </a>
+                                        <form action="{{ route('articles.destroy',['id' => $article->id]) }}" method="post" class="uk-hidden">
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+                                        </form>
                                     </li>
                                 </ul>
                             </div>
