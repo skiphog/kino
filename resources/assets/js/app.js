@@ -2,9 +2,12 @@
 window.$ = window.jQuery = require('jquery')
 import UIkit from 'uikit'
 import Icons from 'uikit/dist/js/uikit-icons'
+require('trumbowyg/dist/trumbowyg');
+require('trumbowyg/dist/langs/ru.min')
 
 // loads the Icon plugin
 UIkit.use(Icons)
+
 
 $(document).ready(function () {
 
@@ -16,5 +19,7 @@ $(document).ready(function () {
 
     });
   });
+
+  $('textarea').trumbowyg({lang: 'ru'});
 
 });

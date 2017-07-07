@@ -16,6 +16,8 @@ $s-color-background: rgba(255, 255, 255, 0.70);
 // 4. Import UIkit.
 @import "~uikit/src/scss/uikit-theme.scss";
 
+@import "~trumbowyg/dist/ui/sass/trumbowyg.scss";
+
 body {
   min-height: 100%;
   overflow-y: scroll;
