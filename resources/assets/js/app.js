@@ -8,7 +8,6 @@ require('trumbowyg/dist/langs/ru.min')
 // loads the Icon plugin
 UIkit.use(Icons)
 
-
 $(document).ready(function () {
 
   $('#admin-article').on('click', '.delete', function () {
